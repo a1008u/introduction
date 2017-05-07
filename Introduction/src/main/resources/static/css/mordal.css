@@ -1,0 +1,61 @@
+/* --------------------------------
+ * mordalwindow(mordalwindw + shade)
+ * -Constitution
+ *　ModalBody
+ *   ModalContens
+ *   Button
+ *
+ * -------------------------------- */
+.show-modal {
+  cursor: pointer;
+}
+/* ModalBody */
+.modalwin {
+  position: fixed;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 #000;
+  z-index: 4;
+}
+/* ModalContens */
+.modalwin-contents {
+  padding: 3%;
+  display: block;
+  text-align: center;
+}
+.modalwin-contents-details {
+  background-color: #fff;
+  line-height: 1.8em;
+  border-radius: 5px;
+}
+.modalwin-detail {
+  padding: 5%;
+}
+dd {
+  border-bottom-style: solid;
+}
+/* --------------------------------
+ * shade
+ * -------------------------------- */
+#shade {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #C8C8C8;
+  opacity: 0.9;
+}
+#shade:hover {
+  transition-duration: 1s;
+}
+.show {
+  display: block;
+}
+.show:hover {
+  transition-duration: 1s;
+}
+.hide {
+  display: none;
+}

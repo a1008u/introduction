@@ -1,0 +1,94 @@
+/* --------------------------------
+ * common：文字の大きさ
+ * -------------------------------- */
+.small {
+  font-size: 15px;
+}
+.middle {
+  font-size: 20px;
+}
+.big {
+  font-size: 30px;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.margin_top {
+  margin-top: 0.5%;
+}
+/* --------------------------------
+ * common：文字の大きさ
+ * -------------------------------- */
+.black {
+  color: #27313D;
+}
+/* --------------------------------
+ * common：button
+ * -------------------------------- */
+.button {
+  height: 50px;
+  border: 0;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  background: #202223;
+}
+.button:hover {
+  transition-duration: 0.4s;
+  background-color: #2FCDB4;
+}
+.button_fontconfig {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin: 10px;
+}
+/* --------------------------------
+ * CSS for JSstyle
+ * -------------------------------- */
+.color {
+  background: #DE4830;
+}
+.hidden {
+  display: none;
+}
+/* --------------------------------
+ * common：search
+ * -------------------------------- */
+.center {
+  text-align: center;
+}
+.search {
+  width: 80%;
+  margin: 15px;
+}
+/* --------------------------------
+ * common：table
+ * -------------------------------- */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #A18E5C;
+}
+/* --------------------------------
+ * common：underLine
+ * -------------------------------- */
+.underline {
+  display: inline-block;
+  color: #27313D;
+}
+.underline:after {
+  content: '';
+  display: block;
+  width: 0;
+  margin: 0 auto;
+  border-bottom: 1px solid #DE4830;
+  transition: width 0.3s ease-in-out;
+}
+.underline:hover:after {
+  width: 100%;
+}

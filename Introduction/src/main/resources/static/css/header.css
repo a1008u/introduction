@@ -1,0 +1,73 @@
+/* ==================================
+  * header
+  * ================================== */
+.header {
+  width: 100%;
+  padding-top: 20px;
+  background-color: #CCD0D5;
+  position: relative;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
+/* --------------------------------
+ * logo
+ * -------------------------------- */
+.logo::before {
+  content: " ";
+  background-image: url("/images/intro.png");
+  background-size: cover;
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.title {
+  color: #27313D;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: 40px;
+  padding-left: 75px;
+}
+/* --------------------------------
+ * menubar
+ * -------------------------------- */
+.menubar {
+  background-color: #27313D;
+  text-align: center;
+}
+.space {
+  padding: 10px;
+}
+.menubar2 {
+  display: inline-block;
+  font-size: 25px;
+}
+.menubar2:after {
+  content: '';
+  display: block;
+  width: 0;
+  margin: 0 auto;
+  border-bottom: 1px solid #FF6860;
+  transition: width 0.3s ease-in-out;
+}
+.menubar2:hover:after {
+  width: 100%;
+}
+/* --------------------------------
+ * common
+ * -------------------------------- */
+.wordcolor {
+  color: #fff;
+  cursor: pointer;
+}

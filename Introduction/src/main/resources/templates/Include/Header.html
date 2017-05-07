@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Thymeleafのth属性を使うための名前空間を指定 -->
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css}"/>
+    <link rel="stylesheet" href="http://necolas.github.io/normalize.css/5.0.0/normalize.css" 
+          th:href="@{/webjars/normalize.css/5.0.0/normalize.css}"/>  
+    <link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>   
+</head>
+<body>
+
+	<div th:fragment="Header">
+	    <header class="header container">
+	    	<div class="row">
+	    		<div class="logo title col-xs-12 col-sm-6 col-md-6 offset-md-2">
+	    			<a href="/Top">SpringBoot</a>
+	    		</div>
+	    		
+	    		<div class="hide">
+			        <span sec:authentication="principal.user.userno" id="myno">duke</span>
+			    </div>
+
+	    		<form th:action="@{/logout}" class="col-xs-12 col-sm-1 col-md-1 offset-md-2" method="post">
+	    			<input type="submit" class="btn btn-outline-success col-xs-12" value="logout">
+	    		</form>
+	    	</div>
+	    	
+		    <nav class="menubar">
+		    
+		    	<div id="menu" class="menu hide"><a href="#">MENU</a></div>
+		    	
+		    	<div class="nav-global hide row">
+			    	<div class="space col-xs-12 col-sm-4 cl-md-4"><a href="/MyProfile" th:href="@{/MyProfile}" class="menubar2 ">MyProfileEdit</a></div>
+					<div class="space col-xs-12 col-sm-4 cl-md-4"><a href="/ListProfile" th:href="@{/ListProfile}" th:value="ListProfile" class="menubar2">ListProfile</a></div>
+					<div class="space col-xs-12 col-sm-4 cl-md-4"><div id="show-mymodal" class="dshow-modal menubar2 wordcolor">MyProfile</div></div>		
+				</div>
+			</nav>
+			
+		</header>
+	</div>
+
+</body>
+</html>

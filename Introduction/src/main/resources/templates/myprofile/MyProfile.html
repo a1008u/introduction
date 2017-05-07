@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Thymeleafのth属性を使うための名前空間を指定 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Employee Profile Input</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css}"/>
+    <link rel="stylesheet" href="http://necolas.github.io/normalize.css/5.0.0/normalize.css" 
+          th:href="@{/webjars/normalize.css/5.0.0/normalize.css}"/>      
+</head>
+<body>
+
+<div class="container">
+    <h1>Employee Profile Input</h1>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <!-- =====================================新規作成(start)===================================== -->
+        <!-- th:action属性の値で、formタグのaction属性の内容を置換できる -->
+        <!-- th:object属性の値にModelの属性名を指定することで、このタグ内で、*(フィールド名)記法ができる -->
+        <form th:action="@{/MyProfile_confirm}" th:object="${MyProfileForm}" class="form-horizontal" method="post">
+            <fieldset>
+                <legend>MyProfile</legend>
+                         
+                <div class="form-group" th:classappend="${#fields.hasErrors('Name')}? 'has-error has-feedback'">
+                    <label for="Name" class="col-xs-12 col-sm-6 col-md-3 control-label">Name</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <input type="text" id="Name" name="Name" th:field="*{Name}" class="form-control" th:value="*{Name}" />
+                        <div th:if="${#fields.hasErrors('Name')}" th:errors="*{Name}" th:errorclass="err"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group" th:classappend="${#fields.hasErrors('Age')}? 'has-error has-feedback'">
+                    <label for="Age" class="col-xs-12 col-sm-6 col-md-3  control-label">Age</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <input type="text" id="Age" name="Age" th:field="*{Age}" class="form-control" value="30"/>
+                        <div th:if="${#fields.hasErrors('Age')}" th:errors="*{Age}" th:errorclass="err"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group" th:classappend="${#fields.hasErrors('Department')}? 'has-error has-feedback'">
+                    <label for="Department" class="col-xs-12 col-sm-6 col-md-3  control-label">Department</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <input type="text" id="Department" name="Department" th:field="*{Department}" class="form-control" value="SE1"/>
+                        <div th:if="${#fields.hasErrors('Department')}" th:errors="*{Department}" th:errorclass="err"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group" th:classappend="${#fields.hasErrors('Club')}? 'has-error has-feedback'">
+                    <label for="Club" class="col-xs-12 col-sm-6 col-md-3 control-label">Club</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <input type="text" id="Club" name="Club" th:field="*{Club}" class="form-control" value="テニス"/>
+                        <div th:if="${#fields.hasErrors('Club')}" th:errors="*{Club}" th:errorclass="err"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group" th:classappend="${#fields.hasErrors('Dispatchlocation')}? 'has-error has-feedback'">
+                    <label for="Dispatchlocation" class="col-xs-12 col-sm-6 col-md-3 control-label">Dispatchlocation</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <input type="text" id="Dispatchlocation" name="Dispatchlocation" th:field="*{Dispatchlocation}" class="form-control" value="新橋"/>
+                        <div th:if="${#fields.hasErrors('Dispatchlocation')}" th:errors="*{Dispatchlocation}" th:errorclass="err"></div>
+                    </div>
+                </div>   
+                
+                <div class="form-group" th:classappend="${#fields.hasErrors('Freetext')}? 'has-error has-feedback'">
+                    <label for="Freetext" class="col-xs-12 col-sm-6 col-md-3 control-label">Freetext</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <input type="text" id="Freetext" name="Freetext" th:field="*{Freetext}" class="form-control" value="未経験ですがよろしくお願いします。"/>
+                        <div th:if="${#fields.hasErrors('Freetext')}" th:errors="*{Freetext}" th:errorclass="err"></div>
+                    </div>
+                </div>               
+                
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">update</button>
+                    </div>
+                </div>
+                
+            </fieldset>
+            
+            <input type="hidden" id="Userno" name="Userno" th:value="*{Userno}"/>
+            
+        </form>
+        
+        <a href="/Top">Top</a>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+        th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

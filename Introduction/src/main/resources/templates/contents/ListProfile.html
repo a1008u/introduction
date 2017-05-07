@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Thymeleafのth属性を使うための名前空間を指定 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Employee List</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css}"/>
+    <link rel="stylesheet" href="http://necolas.github.io/normalize.css/5.0.0/normalize.css" 
+          th:href="@{/webjars/normalize.css/5.0.0/normalize.css}"/>  
+    <link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>   
+    <link href="/css/html_ListProfile.css" th:href="@{/css/html_ListProfile.css}" rel="stylesheet"/>   
+</head>
+<body>
+<div class="">
+
+	<!-- ==============Header============== -->
+    <div th:replace="Include/Header :: Header"></div>
+    <!-- ==============Header============== -->
+    
+    <div class="center container">
+    	<div class="row">
+    		<div class ="col-12">
+    			<h1>Employee List</h1>
+    		</div>
+    		<div class="col-12">
+    			<INPUT type="text" name="search" id="id_search" class="search" placeholder="search word" />
+    		</div>	
+    	</div>
+    </div>
+
+    <div class="container">
+        <table class="table table-hover table-condensed" >
+            <thead class="thead-inverse">
+            <tr>
+                <th>社員番号</th>
+                <th>名前</th>
+                <th>部署</th>
+                <th>現場</th>
+                <th>編集</th>
+            </tr>
+            </thead>
+            <!-- List<Customer>の内容を１件ずつループしてアクセスする(th:each="属性名：オブジェクト名") -->
+            <tr th:each="profile: ${ListProfile}">
+                <td id="userno" class="show-modal" th:text="${profile.userno}">a1</td>
+                <td class="show-modal"  th:text="${profile.Name}">山田</td>
+                <td class="show-modal"  th:text="${profile.Department}">山田</td>
+                <td class="show-modal"  th:text="${profile.Dispatchlocation}">山田</td>
+                <td ><a th:href="@{MyProfile/edit/(userno=${profile.userno})}"><span class="underline black" th:text="${profile.userno} + を編集"></span></a></td>
+            </tr>
+        </table>
+        
+        <a href="/Top">Top</a>
+    </div>
+    
+    <!-- ==============modal window============== -->
+	<div th:replace="Include/Modal :: Modal" class="menubar"></div>
+	<!-- ==============/modal window============== -->
+    
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+        th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+<script th:src="@{/webjars/quicksearch/2.2.0/src/jquery.quicksearch.js}"></script>
+
+<script type="text/javascript" src="/js/header.js" th:src="@{/js/header.js}"></script>
+<script type="text/javascript" src="/js/mymordal.js" th:src="@{/js/mymordal.js}"></script>
+<script type="text/javascript" src="/js/search.js" th:src="@{/js/search.js}"></script>
+
+</body>
+</html>

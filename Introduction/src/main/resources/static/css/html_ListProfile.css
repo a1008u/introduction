@@ -1,0 +1,234 @@
+/* --------------------------------
+ * ListProfile.html
+ * -------------------------------- */
+/*----------------  @import "common.less"----------------*/
+/* --------------------------------
+ * common：文字の大きさ
+ * -------------------------------- */
+.small {
+  font-size: 15px;
+}
+.middle {
+  font-size: 20px;
+}
+.big {
+  font-size: 30px;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.margin_top {
+  margin-top: 0.5%;
+}
+/* --------------------------------
+ * common：文字の大きさ
+ * -------------------------------- */
+.black {
+  color: #27313D;
+}
+/* --------------------------------
+ * common：button
+ * -------------------------------- */
+.button {
+  height: 50px;
+  border: 0;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  background: #202223;
+}
+.button:hover {
+  transition-duration: 0.4s;
+  background-color: #2FCDB4;
+}
+.button_fontconfig {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin: 10px;
+}
+/* --------------------------------
+ * CSS for JSstyle
+ * -------------------------------- */
+.color {
+  background: #DE4830;
+}
+.hidden {
+  display: none;
+}
+/* --------------------------------
+ * common：search
+ * -------------------------------- */
+.center {
+  text-align: center;
+}
+.search {
+  width: 80%;
+  margin: 15px;
+}
+/* --------------------------------
+ * common：table
+ * -------------------------------- */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #A18E5C;
+}
+/* --------------------------------
+ * common：underLine
+ * -------------------------------- */
+.underline {
+  display: inline-block;
+  color: #27313D;
+}
+.underline:after {
+  content: '';
+  display: block;
+  width: 0;
+  margin: 0 auto;
+  border-bottom: 1px solid #DE4830;
+  transition: width 0.3s ease-in-out;
+}
+.underline:hover:after {
+  width: 100%;
+}
+/*----------------  @import "header.less"----------------*/
+/* ==================================
+  * header
+  * ================================== */
+.header {
+  width: 100%;
+  padding-top: 20px;
+  background-color: #CCD0D5;
+  position: relative;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
+/* --------------------------------
+ * logo
+ * -------------------------------- */
+.logo::before {
+  content: " ";
+  background-image: url("/images/intro.png");
+  background-size: cover;
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.title {
+  color: #27313D;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: 40px;
+  padding-left: 75px;
+}
+/* --------------------------------
+ * menubar
+ * -------------------------------- */
+.menubar {
+  background-color: #27313D;
+  text-align: center;
+}
+.space {
+  padding: 10px;
+}
+.menubar2 {
+  display: inline-block;
+  font-size: 25px;
+}
+.menubar2:after {
+  content: '';
+  display: block;
+  width: 0;
+  margin: 0 auto;
+  border-bottom: 1px solid #FF6860;
+  transition: width 0.3s ease-in-out;
+}
+.menubar2:hover:after {
+  width: 100%;
+}
+/* --------------------------------
+ * common
+ * -------------------------------- */
+.wordcolor {
+  color: #fff;
+  cursor: pointer;
+}
+/*----------------  @import "mordal.less"----------------*/
+/* --------------------------------
+ * mordalwindow(mordalwindw + shade)
+ * -Constitution
+ *　ModalBody
+ *   ModalContens
+ *   Button
+ *
+ * -------------------------------- */
+.show-modal {
+  cursor: pointer;
+}
+/* ModalBody */
+.modalwin {
+  position: fixed;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 #000;
+  z-index: 4;
+}
+/* ModalContens */
+.modalwin-contents {
+  padding: 3%;
+  display: block;
+  text-align: center;
+}
+.modalwin-contents-details {
+  background-color: #fff;
+  line-height: 1.8em;
+  border-radius: 5px;
+}
+.modalwin-detail {
+  padding: 5%;
+}
+dd {
+  border-bottom-style: solid;
+}
+/* --------------------------------
+ * shade
+ * -------------------------------- */
+#shade {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #C8C8C8;
+  opacity: 0.9;
+}
+#shade:hover {
+  transition-duration: 1s;
+}
+.show {
+  display: block;
+}
+.show:hover {
+  transition-duration: 1s;
+}
+.hide {
+  display: none;
+}

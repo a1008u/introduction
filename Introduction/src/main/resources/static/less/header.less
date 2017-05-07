@@ -1,0 +1,99 @@
+@header_radius: 5px;
+@header_pad: 10px;
+@header_logosize: 30px;
+@header_wordcolor: #fff;
+@header_headercolor: #CCD0D5;
+@header_darkcolor: #27313D;
+@header_lightcolor: #FF6860;
+
+/* ==================================
+  * header
+  * ================================== */
+
+.header {
+    width: 100%;
+    padding-top: 20px;
+    background-color: @header_headercolor;
+    position: relative;
+}
+
+a {
+    color: @header_wordcolor;
+    text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: @header_wordcolor;
+    text-decoration: none;
+}
+
+
+/* --------------------------------
+ * logo
+ * -------------------------------- */
+
+.logo::before {
+    content: " ";
+    background-image: url("/images/intro.png");
+    background-size: cover;
+    display: block;
+    height: @header_logosize;
+    width: @header_logosize;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.title {
+    color: @header_darkcolor;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: @header_logosize + 10px;
+    padding-left: 75px;
+}
+
+
+/* --------------------------------
+ * menubar
+ * -------------------------------- */
+
+.menubar {
+    background-color: @header_darkcolor;
+    text-align: center;
+}
+
+.space {
+    padding: 10px;
+}
+
+.menubar2 {
+    display: inline-block;
+    font-size: 25px;
+    &:after {
+        content: '';
+        display: block;
+        width: 0;
+        margin: 0 auto;
+        border-bottom: 1px solid @header_lightcolor;
+        transition: width 0.3s ease-in-out;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+
+
+/* --------------------------------
+ * common
+ * -------------------------------- */
+
+.wordcolor {
+    color: @header_wordcolor;
+    cursor: pointer;
+}

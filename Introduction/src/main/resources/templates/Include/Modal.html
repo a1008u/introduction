@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Thymeleafのth属性を使うための名前空間を指定 -->
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css}"/>
+    <link rel="stylesheet" href="http://necolas.github.io/normalize.css/5.0.0/normalize.css" 
+          th:href="@{/webjars/normalize.css/5.0.0/normalize.css}"/>  
+</head>
+<body>
+
+	<div th:fragment="Modal">
+		<!-- Modal Body -->
+		<section id="modalwin" class="container modalwin hide type">
+		
+			<div class="row frame modalwin-contents">
+				<div class="row modalwin-contents modalwin-contents-1">
+					<img src="/images/modal-image.png" th:src="@{/images/modal-image.png}" class="modalwin-img"/>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<dl class= "modalwin-detail modalwin-contents-details">
+							<dt class="left small">Userno</dt>
+							<dd id="UserNo" class="center big"></dd>
+							<dt class="left small">Name</dt>
+							<dd id="Name" class="center big"></dd>
+						</dl>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 ">
+						<dl class= "modalwin-detail modalwin-contents-details ">
+							<dt class="left small">Age</dt>
+							<dd id="Age" class="right middle"></dd>
+							<dt class="left small">Department</dt>
+							<dd id="Department" class="right middle"></dd>
+							<dt class="left small">Club</dt>
+							<dd id="Club" class="right middle"></dd>
+							<dt class="left small">Dispatchlocation</dt>
+							<dd id="Dispatchlocation" class="right middle"></dd>
+							<dt class="left small">Freetext</dt>
+							<dd id="Freetext" class="right middle"></dd>
+						</dl>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class=" margin col-xs-12 col-sm-1 col-md-1">
+						<button class="btn btn-outline-success ">Return</button>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		
+	</div>
+
+</body>
+</html>

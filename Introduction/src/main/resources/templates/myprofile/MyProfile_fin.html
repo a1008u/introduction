@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Thymeleafのth属性を使うための名前空間を指定 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Employee Profile finish</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap-theme.min.css}"/>
+    <link rel="stylesheet" href="http://necolas.github.io/normalize.css/5.0.0/normalize.css" 
+          th:href="@{/webjars/normalize.css/5.0.0/normalize.css}"/>     
+</head>
+<body>
+
+<div class="container">
+    <h1>Employee Profile finish</h1>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+        <form th:action="@{/MyProfile_fin}" th:object="${MyProfileForm}" class="form-horizontal" method="post">
+            <fieldset>
+                <legend>MyProfile</legend>
+                
+                <div class="form-group">
+                    <label for="Name" class="col-xs-12 col-sm-6 col-md-3 control-label control-label" >Name</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                       <div th:text="${MyProfileForm.Name}" id="Name">田中</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Age" class="col-xs-12 col-sm-6 col-md-3 control-label control-label" >Age</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                       <div th:text="${MyProfileForm.Age}" id="Age">32</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Department" class="col-xs-12 col-sm-6 col-md-3 control-label control-label" >Department</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                       <div th:text="${MyProfileForm.Department}" id="Department">32</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Club" class="col-xs-12 col-sm-6 col-md-3 control-label control-label" >Club</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                       <div th:text="${MyProfileForm.Club}" id="Club">テニス</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Dispatchlocation" class="col-xs-12 col-sm-6 col-md-3 control-label control-label" >Dispatchlocation</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                       <div th:text="${MyProfileForm.Dispatchlocation}" id="Dispatchlocation">新橋</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Freetext" class="col-xs-12 col-sm-6 col-md-3 control-label control-label" >Freetext</label>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                       <div th:text="${MyProfileForm.Freetext}" id="Freetext">よろしくお願いします。</div>
+                    </div>
+                </div>
+                                
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                         <a href="/Top">Top</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+        th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>
