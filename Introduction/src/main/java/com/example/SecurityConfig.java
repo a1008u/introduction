@@ -33,9 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .anyRequest().authenticated()
             .and()
             .formLogin()
-            	.loginProcessingUrl("/login") // 「認証処理のパス」
-                    .loginPage("/loginForm") // ログイン・フォーム表示のパス」
-                    .failureUrl("/loginForm?error") // 「認証失敗時の遷移先」
+            	.loginProcessingUrl("/login")        // 「認証処理のパス」
+                    .loginPage("/loginForm")         // ログイン・フォーム表示のパス」
+                    .failureUrl("/loginForm?error")  // 「認証失敗時の遷移先」
                     .defaultSuccessUrl("/Top", true) // 「認証成功時の遷移先」
                     .usernameParameter("UserNo").passwordParameter("password") // 「ユーザ名・パスワードのパラメータ名」
             .and()

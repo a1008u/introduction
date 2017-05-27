@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,18 +38,21 @@ public class Profile {
     private String userno;
     
     @Column(nullable = false)
+    @Size(min = 1, max = 30)
     private String Name;
     
     @Column(nullable = false)
+    @Max(150)
+	@Min(0)
     private Integer Age;
     
-    @Column
+    @Column(nullable = false)
     private String Department;
     
     @Column
     private String Club;
     
-    @Column
+    @Column(nullable = false)
     private String Dispatchlocation;
     
     @Column
