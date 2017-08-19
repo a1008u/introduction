@@ -1,4 +1,4 @@
-package com.example.app.controller;
+package com.example.app.controller.myProfileEdit;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class MyProfile_3_fin_controller {
 	
 	/**
 	 * 1.セッションを削除
-	 * @param SessionStatus
+	 * @param sessionStatus
 	 * 
 	 */
 	@GetMapping
@@ -50,8 +50,8 @@ public class MyProfile_3_fin_controller {
 	
 	/**
 	 * 2.編集情報を保存する
-	 * @param Model
-	 * @param ProfileForm @ModelAttribute("MyProfileForm")
+	 * @param Mav
+	 * @param MyProfileForm @ModelAttribute("MyProfileForm")
 	 * 
 	 */
 	@PostMapping

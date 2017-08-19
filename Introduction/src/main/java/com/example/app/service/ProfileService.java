@@ -69,8 +69,7 @@ public class ProfileService {
     }
     
     public Profile findOneAndSave(ProfileBean ProfileBean) {
-    	String Userno = ProfileBean.getUserno();
-    	Profile Profile = ProfileRepository.findByUserno(Userno);
+    	Profile Profile = ProfileRepository.findByUserno(ProfileBean.getUserno());
     	BeanUtils.copyProperties(ProfileBean, Profile);
         return ProfileRepository.save(Profile);
     }

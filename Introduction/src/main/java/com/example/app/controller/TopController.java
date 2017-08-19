@@ -30,9 +30,9 @@ public class TopController {
 	/**
 	 * メイン画面表示
 	 * MyProfileを取得して、Topページへ
-	 * @param Model
-	 * @param LoginUserDetails @AuthenticationPrincipal
-	 * 
+	 * @param model
+	 * @param userDetails @AuthenticationPrincipal
+	 *
 	 */
 	@GetMapping
     String list(Model model, @AuthenticationPrincipal LoginUserDetails userDetails) {
@@ -49,7 +49,7 @@ public class TopController {
 
 	/**
 	 * MyProfileを取得
-	 * @param LoginUserDetails
+	 * @param userDetails
 	 * 
 	 */
 	private ProfileBean createMyProfileBean(LoginUserDetails userDetails) {

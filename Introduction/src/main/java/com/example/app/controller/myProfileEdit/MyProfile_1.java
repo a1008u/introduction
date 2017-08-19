@@ -1,4 +1,4 @@
-package com.example.app.controller;
+package com.example.app.controller.myProfileEdit;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,12 +51,12 @@ public class MyProfile_1 {
     /**
 	 * 2-1----------------------------------------------------
 	 * ログインユーザ(自分)の情報をFormに格納し、MyProfile編集ページへ
-	 * 
-	 * @param Model
-	 * @param ProfieForm ＊セッションに格納しているFormを取得
-	 * @param LoginUserDetails　@AuthenticationPrincipal 
-	 * @param ProfileBean @ModelAttribute("MyProfileBean")
-	 * 
+	 *
+	 * @param model
+	 * @param MyProfileForm ＊セッションに格納しているFormを取得
+	 * @param userDetails　@AuthenticationPrincipal
+	 * @param MyProfileBean @ModelAttribute("MyProfileBean")
+	 *
 	 */
 	@GetMapping
     String MyEditForm(Model model, 
@@ -75,9 +75,9 @@ public class MyProfile_1 {
 	 * ProfileListからUserNoを取得し、Profile編集ページへ
 	 * (Profile編集ページは2-1と共通)
 	 * 
-	 * @param String @RequestParam
-	 * @param Model 
-	 * @param ProfileForm ＊セッションに格納しているFormを取得
+	 * @param userno @RequestParam
+	 * @param model
+	 * @param MyProfileForm ＊セッションに格納しているFormを取得
 	 * 
 	 */
     @GetMapping(path = "edit")

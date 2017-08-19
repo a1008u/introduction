@@ -1,4 +1,4 @@
-package com.example.app.controller;
+package com.example.app.controller.myProfileEdit;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +25,9 @@ public class MyProfile_2_confirm_controller {
 	 * 2-1----------------------------------------------------
 	 * 編集情報を取得し、入力→確認画面へ
 	 * 
-	 * @param Model
-	 * @param ProfieForm　@Validated @ModelAttribute("MyProfileForm") ＊セッションに格納しているFormを取得
-	 * @param BindingResult
-	 * 
+	 * @param Mav
+	 * @param MyProfileForm　@Validated @ModelAttribute("MyProfileForm") ＊セッションに格納しているFormを取得
+	 * @param result
 	 */
 	@PostMapping
     String editForm(Model Mav, 
@@ -50,10 +49,9 @@ public class MyProfile_2_confirm_controller {
 	 * 2-1----------------------------------------------------
 	 * 確認画面→入力画面へ
 	 * 
-	 * @param Model
-	 * @param ProfieForm　@Validated @ModelAttribute("MyProfileForm") ＊セッションに格納しているFormを取得
-	 * @param BindingResult
-	 * 
+	 * @param Mav
+	 * @param MyProfileForm　@Validated @ModelAttribute("MyProfileForm") ＊セッションに格納しているFormを取得
+	 * @param result
 	 */
 	@GetMapping(path = "return")
     String retrunForm(Model Mav, 
@@ -75,8 +73,7 @@ public class MyProfile_2_confirm_controller {
 	 * 共通メソッド----------------------------------------------------------
 	 * Usernoの確認
 	 * 
-	 * @param ProfieForm　
-	 * 
+	 * @param MyProfileForm　
 	 */
 	private void Check_Userno(ProfileForm MyProfileForm) {
 		System.out.println("========================");

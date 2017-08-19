@@ -22,7 +22,7 @@ public class ListProfileController {
 	
 	/**
 	 * Profile一覧を表示する。
-	 * @param Model
+	 * @param model
 	 * 
 	 */
 	@GetMapping
